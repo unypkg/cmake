@@ -11,7 +11,7 @@ set -vx
 wget -qO- uny.nu/pkg | bash -s buildsys
 
 ### Installing build dependencies
-unyp install curl libpsl libidn2 libunistring nghttp2 openssl libarchive libuv
+unyp install expat curl libpsl libidn2 libunistring nghttp2 openssl libarchive libuv
 
 #pip3_bin=(/uny/pkg/python/*/bin/pip3)
 #"${pip3_bin[0]}" install --upgrade pip
@@ -77,7 +77,17 @@ get_include_paths
 
 unset LD_RUN_PATH
 
-./bootstrap --prefix=/uny/pkg/"$pkgname"/"$pkgver" --parallel="$(nproc)"
+./bootstrap --prefix=/uny/pkg/"$pkgname"/"$pkgver" \
+    --parallel="$(nproc)" \
+    --system-curl \
+    --system-expat \
+    --system-zlib \
+    --system-bzip2 \
+    --system-liblzma \
+    --system-nghttp2 \
+    --system-zstd \
+    --system-libarchive \
+    --system-libuv 
 
 make -j"$(nproc)"
 
