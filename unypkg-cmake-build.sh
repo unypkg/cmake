@@ -77,10 +77,7 @@ get_include_paths
 
 unset LD_RUN_PATH
 
-./bootstrap
-
-./configure \
-    --prefix=/uny/pkg/"$pkgname"/"$pkgver"
+./bootstrap --prefix=/uny/pkg/"$pkgname"/"$pkgver"
 
 make -j"$(nproc)"
 
