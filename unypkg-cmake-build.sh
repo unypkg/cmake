@@ -87,7 +87,9 @@ get_include_paths
     --system-nghttp2 \
     --system-zstd \
     --system-libarchive \
-    --system-libuv 
+    --system-libuv \
+    --bootstrap-system-libuv \
+    --verbose
 
 make -j"$(nproc)"
 
