@@ -75,10 +75,7 @@ get_include_paths
 ####################################################
 ### Start of individual build script
 
-#unset LD_RUN_PATH
-
-CMAKE_PREFIX_PATH="$(for i in /uny/pkg/*/*; do echo -n "$i"\:; done)"
-export CMAKE_PREFIX_PATH
+unset LD_RUN_PATH
 
 ./bootstrap --prefix=/uny/pkg/"$pkgname"/"$pkgver" \
     --parallel="$(nproc)" \
