@@ -11,7 +11,7 @@ set -vx
 wget -qO- uny.nu/pkg | bash -s buildsys
 
 ### Installing build dependencies
-unyp install expat curl libpsl libidn2 libunistring nghttp2 openssl libarchive libuv libxml2
+unyp install expat curl libarchive libuv libxml2
 
 #pip3_bin=(/uny/pkg/python/*/bin/pip3)
 #"${pip3_bin[0]}" install --upgrade pip
